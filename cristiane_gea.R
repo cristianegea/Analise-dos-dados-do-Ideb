@@ -111,7 +111,7 @@
   
   # Salvando data.frame com o nome "ensino_fundamental.Rdata"
   
-    ensino_fundamental <- 'C:/Users/GEA/Google Drive/Ipea/ensino_fundamental.RData'
+    ensino_fundamental <- '../ensino_fundamental.RData'
   
     saveRDS(object = ensino_fundamental, file = ensino_fundamental)
     
