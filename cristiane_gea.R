@@ -1,112 +1,112 @@
-# Chamada P˙blica 095/2020 - processo de seleÁ„o - prova
+# Chamada P√∫blica 095/2020 - processo de sele√ß√£o - prova
 # Candidata: Cristiane Gea
 # Objetivo: Desenvolver um script em R que realize as tarefas descritas nos itens 1 a 3.
 
-# Item 1: ObtenÁ„o de dados
+# Item 1: Obten√ß√£o de dados
 
 #   Download dos arquivos "sinopse_estatistica_da_educacao_basica_XXXX.zip"
 #   Download do arquivo "divulgacao_anos_iniciais_municipios_2019.zip"
 
-# Item 2: EstruturaÁ„o dos dados
+# Item 2: Estrutura√ß√£o dos dados
 
-#   Objetivo: criaÁ„o de um dataframe municipal em formato de painel.
+#   Objetivo: cria√ß√£o de um dataframe municipal em formato de painel.
 
-#   Vari·veis contidas no dataframe:
-#     (i)   cÛdigo do municÌpio
-#     (ii)  nome do municÌpio
+#   Vari√°veis contidas no dataframe:
+#     (i)   c√≥digo do munic√≠pio
+#     (ii)  nome do munic√≠pio
 #     (iii) ano
-#     (iv)  raz„o estudante-professor nos anos inicias do ensino fundamental nas escolas municipais
+#     (iv)  raz√£o estudante-professor nos anos inicias do ensino fundamental nas escolas municipais
 #     (v)   IDEB das escolas municipais para os anos iniciais do ensino fundamental
 
 #   Diante da quantidade de abas que cada arquivo "sinopse_estatistica_da_educacao_basica_XXXX.xlsx",
 #   separei as abas correspondentes aos dados dos alunos e dos professores do ensino fundamental (abas
 #   "Ensino Fundamental 1.14" e "Ensino Fundamental 2.13", respectivamente) em arquivo a parte.
-#   Para o total de matrÌculas dos alunos e dos professores dos anos iniciais do ensino fundamental,
+#   Para o total de matr√≠culas dos alunos e dos professores dos anos iniciais do ensino fundamental,
 #   foram consideradas a coluna "Municipal" dos "Anos Iniciais" (para cada caso).
 
-#   Gloss·rio das vari·veis:
-#     (i)   ano => ano no qual os dados est„o inseridos
-#     (ii)  codigo_municipio => cÛdigo dos municÌpios
-#     (iii) nome_municipio => nome dos municÌpios
-#     (iv)  total_matricula_aluno => total de matrÌcula dos alunos da rede municipal
-#     (v)   total_matricula_professor => total de matrÌcula dos professor da rede municipal
+#   Gloss√°rio das vari√°veis:
+#     (i)   ano => ano no qual os dados est√£o inseridos
+#     (ii)  codigo_municipio => c√≥digo dos munic√≠pios
+#     (iii) nome_municipio => nome dos munic√≠pios
+#     (iv)  total_matricula_aluno => total de matr√≠cula dos alunos da rede municipal
+#     (v)   total_matricula_professor => total de matr√≠cula dos professor da rede municipal
 #     (vi)  ideb => nota ideb
 
-#   Obs.: os valores faltantes est„o como NA.
+#   Obs.: os valores faltantes est√£o como NA.
 
-#  ImportaÁ„o dos dados
+#  Importa√ß√£o dos dados
 
   library(readxl)
   
   dados2007 <- read_excel(
-    "C:/Users/GEA/Google Drive/Ipea/consolidado_sinopse_estatistica_da_educacao_basica.xlsx",
+    "../consolidado_sinopse_estatistica_da_educacao_basica.xlsx",
     sheet = "2007")
   
   dados2008 <- read_excel(
-    "C:/Users/GEA/Google Drive/Ipea/consolidado_sinopse_estatistica_da_educacao_basica.xlsx",
+    "../consolidado_sinopse_estatistica_da_educacao_basica.xlsx",
     sheet = "2008")
   
   dados2009 <- read_excel(
-    "C:/Users/GEA/Google Drive/Ipea/consolidado_sinopse_estatistica_da_educacao_basica.xlsx",
+    "../consolidado_sinopse_estatistica_da_educacao_basica.xlsx",
     sheet = "2009")
   
   dados2010 <- read_excel(
-    "C:/Users/GEA/Google Drive/Ipea/consolidado_sinopse_estatistica_da_educacao_basica.xlsx",
+    "../consolidado_sinopse_estatistica_da_educacao_basica.xlsx",
     sheet = "2010")
   
   dados2011 <- read_excel(
-    "C:/Users/GEA/Google Drive/Ipea/consolidado_sinopse_estatistica_da_educacao_basica.xlsx",
+    "../consolidado_sinopse_estatistica_da_educacao_basica.xlsx",
     sheet = "2011")
   
   dados2012 <- read_excel(
-    "C:/Users/GEA/Google Drive/Ipea/consolidado_sinopse_estatistica_da_educacao_basica.xlsx",
+    "../consolidado_sinopse_estatistica_da_educacao_basica.xlsx",
     sheet = "2012")
   
   dados2013 <- read_excel(
-    "C:/Users/GEA/Google Drive/Ipea/consolidado_sinopse_estatistica_da_educacao_basica.xlsx",
+    "../consolidado_sinopse_estatistica_da_educacao_basica.xlsx",
     sheet = "2013")
   
   dados2014 <- read_excel(
-    "C:/Users/GEA/Google Drive/Ipea/consolidado_sinopse_estatistica_da_educacao_basica.xlsx",
+    "../consolidado_sinopse_estatistica_da_educacao_basica.xlsx",
     sheet = "2014")
   
   dados2015 <- read_excel(
-    "C:/Users/GEA/Google Drive/Ipea/consolidado_sinopse_estatistica_da_educacao_basica.xlsx",
+    "../consolidado_sinopse_estatistica_da_educacao_basica.xlsx",
     sheet = "2015")
   
   dados2016 <- read_excel(
-    "C:/Users/GEA/Google Drive/Ipea/consolidado_sinopse_estatistica_da_educacao_basica.xlsx",
+    "../consolidado_sinopse_estatistica_da_educacao_basica.xlsx",
     sheet = "2016")
  
   dados2017 <- read_excel(
-    "C:/Users/GEA/Google Drive/Ipea/consolidado_sinopse_estatistica_da_educacao_basica.xlsx",
+    "../consolidado_sinopse_estatistica_da_educacao_basica.xlsx",
     sheet = "2017")
   
   dados2018 <- read_excel(
-    "C:/Users/GEA/Google Drive/Ipea/consolidado_sinopse_estatistica_da_educacao_basica.xlsx",
+    "../consolidado_sinopse_estatistica_da_educacao_basica.xlsx",
     sheet = "2018")
   
   dados2019 <- read_excel(
-    "C:/Users/GEA/Google Drive/Ipea/consolidado_sinopse_estatistica_da_educacao_basica.xlsx",
+    "../consolidado_sinopse_estatistica_da_educacao_basica.xlsx",
     sheet = "2019")
 
-# COncatenaÁ„o dos dados
+# Concatena√ß√£o dos dados
   dados <- rbind(dados2007, dados2008, dados2009, dados2010, dados2011, dados2012, dados2013,
                  dados2014, dados2015, dados2016, dados2017, dados2018, dados2019)
   
   View(dados)
   
-# RemoÁ„o dos dados ausentes
+# Remo√ß√£o dos dados ausentes
   dados2 <- na.omit(dados)
   
   View(dados2)
   
-  # CriaÁ„o da vari·vel "estudante-professor"
+  # Cria√ß√£o da vari√°vel "estudante-professor"
   dados2$estudante_professor <- (dados2$total_matricula_aluno/dados2$total_matricula_professor)
   
   View(dados2)
   
-# CriaÁ„o do dataframe "ensino_fundamental"
+# Cria√ß√£o do dataframe "ensino_fundamental"
   ensino_fundamental <- data.frame(dados2)
   
   # Salvando data.frame com o nome "ensino_fundamental.Rdata"
@@ -115,9 +115,9 @@
   
     saveRDS(object = ensino_fundamental, file = ensino_fundamental)
     
-# Item 3: An·lise dos dados
+# Item 3: An√°lise dos dados
   
-  # (a) CriaÁ„o de uma funÁ„o chamada "grafico_ideb"
+  # (a) Cria√ß√£o de uma fun√ß√£o chamada "grafico_ideb"
         library(ggplot2)
         library(gridExtra)
         library(dplyr)
@@ -134,7 +134,7 @@
           return(plot)
         }
     
-  # (b) ElaboraÁ„o de gr·ficos da relaÁ„o raz„o estudante-professor x nota ideb para os anos 2007 e 2019
+  # (b) Elabora√ß√£o de gr√°ficos da rela√ß√£o raz√£o estudante-professor x nota ideb para os anos 2007 e 2019
         library(ggplot2)
         library(dplyr)
         library(addinslist)
@@ -153,7 +153,7 @@
                        shape = 22, fill = alpha("blue", 0.4)) 
           (gg <- ggplotly(plot))
 
-  # (c) CriaÁ„o um dataframe com estatÌsticas descritivas por ano
+  # (c) Cria√ß√£o um dataframe com estat√≠sticas descritivas por ano
         dt2007 <- dados2[1:4985,]
         dt2009 <- dados2[4986:9944,]
         dt2011 <- dados2[9945:15080,]
@@ -253,7 +253,7 @@
           min_ratio_19 <- min(dt2019$estudante_professor)      
           max_ratio_19 <- max(dt2019$estudante_professor)
       
-        # CriaÁ„o do dataframe
+        # Cria√ß√£o do dataframe
           estatistica_descritiva <- data.frame(
             ano = c(2007, 2009, 2011, 2013, 2015, 2017, 2019),
             media_ideb = c(media_ideb_07, media_ideb_09, media_ideb_11, media_ideb_13, media_ideb_15,
