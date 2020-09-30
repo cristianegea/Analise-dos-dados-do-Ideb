@@ -1,1 +1,1 @@
-# Analise-dos-dados-do-Ideb
+# Script feito no R para análise dos dados do Ideb
